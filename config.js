@@ -1,24 +1,24 @@
 export const CONFIG = {
   herName: 'Kirat',
-  myName: '[MY NAME]',
+  myName: 'Neeraj',
   birthday: '19 September',
   relationshipStart: '2024-03-15T00:00:00',
-  songUrl: '', // Add a permitted MP3 URL or /assets/your-song.mp3
+  songUrl: '',
   messages: {
-    beginning: '[MY PERSONAL MESSAGE HERE]\n\nTell the story of the day we met, in your own words.',
-    closer: '[WRITE ABOUT HOW WE GOT CLOSER HERE]',
-    today: '[WRITE A FEW QUIET WORDS ABOUT KIRAT HERE]'
+    beginning: 'I still remember the first moment I saw you and felt like the world shifted a little.\n\nYou became the kind of person I would want in every chapter of my life.',
+    closer: 'The more I got to know you, the more I realized how naturally you became a part of my peace, my laughter, and my little everyday moments.',
+    today: 'Kirat, your presence is one of the gentlest, most beautiful things to ever find me. I am grateful for you every day.'
   },
-  letter: '[WRITE MY FULL BIRTHDAY LETTER HERE]\n\nMake it honest, specific, and entirely yours.',
-  finalMessage: '[FINAL BIRTHDAY MESSAGE]',
+  letter: '[WRITE MY FULL BIRTHDAY LETTER HERE]\n\nI will add it later.',
+  finalMessage: 'You are my favourite kind of quiet miracle, and I am so grateful to be writing this chapter with you.',
   gallery: [
-    { src: '', alt: 'Gallery memory 01', caption: '[PHOTO_01] · Add a caption here' },
-    { src: '', alt: 'Gallery memory 02', caption: '[PHOTO_02] · Add a caption here' },
-    { src: '', alt: 'Gallery memory 03', caption: '[PHOTO_03] · Add a caption here' },
-    { src: '', alt: 'Gallery memory 04', caption: '[PHOTO_04] · Add a caption here' }
+    { src: 'assets/kirat-wish.jpg', alt: 'Kirat in her birthday wish photo', caption: 'A little wish for the woman I adore.' },
+    { src: '', alt: 'Our second memory together', caption: '[PHOTO_02] · Add your second memory here' },
+    { src: '', alt: 'Our third memory together', caption: '[PHOTO_03] · Add your third memory here' },
+    { src: '', alt: 'Our fourth memory together', caption: '[PHOTO_04] · Add your fourth memory here' }
   ],
   photoTimeline: [
-    { year: '2024', date: '15 March 2024', caption: 'Where it all began.', src: '' },
+    { year: '2024', date: '15 March 2024', caption: 'Where it all began.', src: 'assets/first-meet.jpg' },
     { year: '2025', date: 'A day worth keeping', caption: 'More memories.', src: '' },
     { year: '2026', date: '19 September 2026', caption: 'Another chapter.', src: '' }
   ]
