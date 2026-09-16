@@ -3,6 +3,7 @@ import { CONFIG } from './config.js';
 const app = document.querySelector('#app');
 const audio = document.querySelector('#music');
 const audioToggle = document.querySelector('#audioToggle');
+const lightbox = document.querySelector('#lightbox');
 let current = 0, timerHandle, typeHandle;
 const name = CONFIG.herName;
 
@@ -37,9 +38,11 @@ function galleryHTML(){return CONFIG.gallery.map((p,i)=>`<figure class="photo-ca
 function timelineHTML(){return CONFIG.photoTimeline.map(p=>`<article class="timeline-item"><h3>${p.year}</h3><p class="eyebrow">${p.date}</p><p class="copy">${p.caption}</p>${p.src?`<img src="${p.src}" loading="lazy" alt="${p.caption}">`:''}</article>`).join('')}
 function startTimer(){const start=new Date(CONFIG.relationshipStart);const update=()=>{let d=Math.max(0,Date.now()-start);let sec=Math.floor(d/1000);const seconds=sec%60;sec=Math.floor(sec/60);const minutes=sec%60;sec=Math.floor(sec/60);const hours=sec%24;const days=Math.floor(sec/24);const years=Math.floor(days/365.2425);const rest=Math.floor(days-years*365.2425);[['years',years],['days',rest],['hours',hours],['minutes',minutes],['seconds',seconds]].forEach(([u,v])=>{const el=document.querySelector(`[data-unit="${u}"]`);if(el)el.textContent=String(v).padStart(u==='days'?3:2,'0')})};update();timerHandle=setInterval(update,1000)}
 function typeText(){const el=document.querySelector('.typewriter');if(!el)return;const text=el.dataset.text||'';let n=0;typeHandle=setInterval(()=>{el.textContent=text.slice(0,++n);if(n>=text.length)clearInterval(typeHandle)},24)}
-function bindGallery(){document.querySelectorAll('.photo-card img').forEach(img=>img.addEventListener('click',()=>{const l=document.querySelector('#lightbox');l.hidden=false;l.querySelector('img').src=img.src}));const qr=document.querySelector('#qr');if(qr)qr.src='https://api.qrserver.com/v1/create-qr-code/?size=300x300&data='+encodeURIComponent(location.href)}
+function bindGallery(){document.querySelectorAll('.photo-card img').forEach(img=>img.addEventListener('click',()=>{lightbox.hidden=false;lightbox.style.display='grid';lightbox.querySelector('img').src=img.src}));const qr=document.querySelector('#qr');if(qr)qr.src='https://api.qrserver.com/v1/create-qr-code/?size=300x300&data='+encodeURIComponent(location.href)}
+function closeLightbox(){lightbox.hidden=true;lightbox.style.display='none';lightbox.querySelector('img').removeAttribute('src')}
 function response(html){const r=document.querySelector('#response');if(r)r.innerHTML=`<div class="memory-card" style="margin-top:28px"><p class="copy">${html}</p>${button('Continue →')}</div>`}
 app.addEventListener('click',e=>{const action=e.target.closest('[data-action]')?.dataset.action;if(!action)return;if(action==='music'){if(CONFIG.songUrl){audio.src=CONFIG.songUrl;audio.play().catch(()=>{})}audioToggle.classList.remove('hidden');render(1);return}if(action==='rememberYes'){response('I knew you would remember. Some days simply stay with us forever.');return}if(action==='rememberNo'){response('Then I guess I have to remind you… 😭<br><br><span class="accent">15 March 2024 ♡</span>');return}if(action==='stayYes'){response('Then let’s keep writing it… one memory at a time.');return}if(action==='stayNo'){response('That button seems to be shy. Let’s try this again?');return}if(action==='final'){render(13);return}if(action==='beginning'){render(4);return}if(action==='closer'){render(5);return}if(action==='gallery'){render(7);return}if(action==='today'){render(9);return}render(current+1)});
 audioToggle.addEventListener('click',()=>{if(audio.paused){audio.play().catch(()=>{});audioToggle.innerHTML='♫ <span>Music on</span>'}else{audio.pause();audioToggle.innerHTML='♫ <span>Music off</span>'}});
-document.querySelector('#lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox'||e.target.classList.contains('close-lightbox'))e.currentTarget.hidden=true});
+lightbox.addEventListener('click',e=>{if(e.target===lightbox||e.target.classList.contains('close-lightbox'))closeLightbox()});
+closeLightbox();
 render(0);
