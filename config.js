@@ -2,6 +2,7 @@ export const CONFIG = {
   herName: 'Kirat',
   myName: 'Neeraj',
   birthday: '19 September',
+  // Our online story began here; the live timer intentionally remains based on this date.
   relationshipStart: '2024-03-15T00:00:00',
   songUrl: 'https://raw.githubusercontent.com/ProgrammerGaurav/happy-birthday/fa327a5e12ee3c3dc44b9ad67288637b1751e364/music.mp3',
   messages: {
@@ -13,13 +14,13 @@ export const CONFIG = {
   finalMessage: 'You are my favourite kind of quiet miracle, and I am so grateful to be writing this chapter with you.',
   gallery: [
     { src: 'assets/kirat-wish.jpg', alt: 'Kirat in her birthday wish photo', caption: 'A little wish for the woman I adore.' },
-    { src: 'assets/photo-2.jpg', alt: 'Our second memory together', caption: 'A memory I want to keep forever.' },
-    { src: 'assets/photo-3.jpg', alt: 'Our third memory together', caption: 'The kind of moment that stays with you.' },
+    { src: 'assets/photo-2.jpg', alt: 'Our first time meeting in person', caption: 'Our first meeting in person — 15 July 2026.' },
+    { src: 'assets/photo-3.jpg', alt: 'A memory we share', caption: 'A memory I want to keep forever.' },
     { src: 'assets/photo-4.jpg', alt: 'Our fourth memory together', caption: 'Some moments are better than words.' }
   ],
   photoTimeline: [
-    { year: '2024', date: '15 March 2024', caption: 'Where it all began.', src: 'assets/first-meet.jpg' },
-    { year: '2025', date: 'A day worth keeping', caption: 'More memories.', src: 'assets/photo-2.jpg' },
-    { year: '2026', date: '19 September 2026', caption: 'Another chapter.', src: 'assets/photo-3.jpg' }
+    { year: '2024', date: '15 March 2024', caption: 'Where our online story began.', src: '' },
+    { year: '2026', date: '15 July 2026', caption: 'The day we finally met in person.', src: 'assets/photo-2.jpg' },
+    { year: '2026', date: '19 September 2026', caption: 'Another beautiful chapter.', src: 'assets/photo-3.jpg' }
   ]
 };
