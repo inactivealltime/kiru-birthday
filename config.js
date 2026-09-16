@@ -3,7 +3,7 @@ export const CONFIG = {
   myName: 'Neeraj',
   birthday: '19 September',
   relationshipStart: '2024-03-15T00:00:00',
-  songUrl: '',
+  songUrl: 'https://raw.githubusercontent.com/ProgrammerGaurav/happy-birthday/fa327a5e12ee3c3dc44b9ad67288637b1751e364/music.mp3',
   messages: {
     beginning: 'I still remember the first moment I saw you and felt like the world shifted a little.\n\nYou became the kind of person I would want in every chapter of my life.',
     closer: 'The more I got to know you, the more I realized how naturally you became a part of my peace, my laughter, and my little everyday moments.',
