@@ -2,7 +2,6 @@ export const CONFIG = {
   herName: 'Kirat',
   myName: 'Neeraj',
   birthday: '19 September',
-  // Our online story began here; the live timer intentionally remains based on this date.
   relationshipStart: '2024-03-15T00:00:00',
   songUrl: 'https://raw.githubusercontent.com/ProgrammerGaurav/happy-birthday/fa327a5e12ee3c3dc44b9ad67288637b1751e364/music.mp3',
   messages: {
@@ -19,7 +18,7 @@ export const CONFIG = {
     { src: 'assets/photo-4.jpg', alt: 'Our fourth memory together', caption: 'Some moments are better than words.' }
   ],
   photoTimeline: [
-    { year: '2024', date: '15 March 2024', caption: 'Where our online story began.', src: '' },
+    { year: '2024', date: '15 March 2024', caption: 'Where our online story began.', src: 'assets/kirat-wish.jpg' },
     { year: '2026', date: '15 July 2026', caption: 'The day we finally met in person.', src: 'assets/photo-2.jpg' },
     { year: '2026', date: '19 September 2026', caption: 'Another beautiful chapter.', src: 'assets/photo-3.jpg' }
   ]
